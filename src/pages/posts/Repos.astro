@@ -1,0 +1,77 @@
+---
+const { MyRepos, response } = Astro.props;
+
+function formatCreatedAtDate(created_at) {
+  const parsedCreated_at = new Date(created_at);
+  const year = parsedCreated_at.getFullYear();
+  const month = parsedCreated_at.getMonth() + 1; // January is 0, so we need to add 1
+  const day = parsedCreated_at.getDate();
+
+  const formattedCreated_at = `${year}-${month}-${day}`;
+  return formattedCreated_at;
+}
+const languageColors = {
+  JavaScript: "text-yellow-300", // You can customize the color classes
+  Python: "text-[#0090FF]",
+  "C++": "text-[#F34B7D]",
+  Go: "text-[#00ADD8]",
+  C: "text-[#555555]",
+  // Add more languages and their corresponding colors
+};
+
+interface Item {
+  id: number;
+  name: string;
+  full_name: string;
+  owner: object;
+  html_url: string;
+  description: string;
+  language: string;
+  svn_url: string;
+  clone_url: string;
+  created_at: string;
+  size: string;
+}
+---
+
+<!doctype html>
+<div class="flex flex-wrap justify-center">
+  {
+    MyRepos.map((Repo: Item) => (
+      <div class="JustOneRepo transition-all duration-300 w-100 border border-gray-300 rounded-md m-2 p-2">
+        <div class="flex justify-between items-center mb-5">
+          <a
+            class="RepoName text-white mr-5 font-semibold text-xl"
+            href={Repo.svn_url}
+          >
+            {Repo.name.length > 20
+              ? Repo.name.substring(0, 15) + "..."
+              : Repo.name}
+          </a>
+
+          <p class="text-gray-400 font-semibold text-sm">
+            {formatCreatedAtDate(Repo.created_at)}
+          </p>
+        </div>
+
+        <div class="flex justify-between items-center">
+          <a class="text-white mr-5 font-semibold" href={Repo.svn_url}>
+            {Repo.description
+              ? Repo.description.length > 40
+                ? Repo.description.substring(0, 30) + "..."
+                : Repo.description
+              : "No description available"}
+          </a>
+
+          <p
+            class={`font-semibold text-sm ${
+              languageColors[Repo.language] || "text-gray-400"
+            }`}
+          >
+            {Repo.language ? `<${Repo.language}>` : "<Too many>"}
+          </p>
+        </div>
+      </div>
+    ))
+  }
+</div>

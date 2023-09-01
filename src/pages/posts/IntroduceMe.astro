@@ -1,0 +1,36 @@
+---
+import { Image } from "astro:assets";
+
+const { MyGithub } = Astro.props;
+---
+
+<div class="IntroduceMe justify-center items-center w-50 h-100 rounded-lg m-5">
+  <div>
+    <Image
+      width="250"
+      height="250"
+      src={MyGithub.avatar_url}
+      alt="Mygithub"
+      class="rounded-lg"
+      style={{
+        maxWidth: "100%" /* Set a maximum width for the container */,
+        height: "auto" /* Allow the height to adjust proportionally */,
+        display: "block" /* Make the container a block-level element */,
+        margin: "0 auto",
+      }}
+    />
+  </div>
+
+  <div>
+    <p
+      class="RepoName justify-center flex text-white font-semibold text-lg lg:text-3xl"
+    >
+      Software Developer
+    </p>
+    <p
+      class="RepoName justify-center flex text-white font-semibold text-sm lg:text-lg"
+    >
+      Computer Science | E-just
+    </p>
+  </div>
+</div>

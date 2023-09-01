@@ -1,0 +1,82 @@
+
+  @font-face {
+    font-family: 'DistantGalaxy';
+    src: url('/fonts/ClimateCrisis-2010.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+
+
+  }
+  
+
+
+:root {
+    --accent: 136, 58, 234;
+    --accent-light: 224, 204, 250;
+    --accent-dark: 49, 10, 101;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      rgb(var(--accent-light)) 30%,
+      white 60%
+    );
+  }
+  body {
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: linear-gradient(to right bottom, #2c0267, #220756, #190946, #140735, #100125);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+  code {
+    font-family:
+      Menlo,
+      Monaco,
+      Lucida Console,
+      Liberation Mono,
+      DejaVu Sans Mono,
+      Bitstream Vera Sans Mono,
+      Courier New,
+      monospace;
+  }
+
+  .ME{
+    font-family: 'DistantGalaxy', sans-serif;
+    color: white;
+  }
+  .sharmojj{
+    font-family: 'Inter', sans-serif;
+font-family: 'Press Start 2P', cursive;
+font-family: 'Source Code Pro', monospace;
+letter-spacing: -1px;
+
+  }
+
+  .RepoName{
+    font-family: 'Inter', sans-serif;
+font-family: 'Press Start 2P', cursive;
+font-family: 'Source Code Pro', monospace;
+  }
+  .IntroduceMe{
+    padding: 5px;
+  background: radial-gradient(112.79999999999998% 100% at -3.9% 100%,#00f6ff 0%,hsl(212,100%,50%) 49.80803150067764%,hsl(262,100%,67%) 74.08234947205608%,hsl(287,100%,50%) 99.95393495930529%);
+}
+.JustOneRepo:hover{
+  background-color: rgba(255, 255, 255, 0.352);
+}
+.BottomBar:before {
+  background: inherit;
+  -webkit-filter: blur(10px) saturate(2);
+}
+.BottomBar{
+  color: #000;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 6px;
+  overflow: hidden;
+  background: rgba(235, 235, 235, 0.875);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
