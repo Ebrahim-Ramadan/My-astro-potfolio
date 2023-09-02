@@ -4,9 +4,6 @@
     // Allow JavaScript files to be imported
     "allowJs": true,
     "plugins": [
-      {
-        "name": "@astrojs/ts-plugin"
-      },
     ],
     "jsx": "react-jsx",
     "jsxImportSource": "node",
