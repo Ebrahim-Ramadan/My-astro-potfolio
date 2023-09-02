@@ -1,4 +1,7 @@
-
+@import 'tailwindcss/base';
+  @import 'tailwindcss/components';
+  @import 'tailwindcss/utilities';
+  
   @font-face {
     font-family: 'DistantGalaxy';
     src: url('/fonts/ClimateCrisis-2010.woff2') format('woff2');
@@ -31,7 +34,12 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
-
+svg{
+  transition: 0.3s;
+}
+svg:hover{
+  opacity: 0.8;
+}
   code {
     font-family:
       Menlo,
@@ -76,7 +84,7 @@ font-family: 'Source Code Pro', monospace;
   opacity: 0.9;
 }
 .BottomBar{
-  padding: 0.25rem 0.5rem;
+  padding: 0.28rem 0.6rem;
   transition: 0.3s;
   color: #000;
   border: 1px solid rgba(0,0,0,0.1);

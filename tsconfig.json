@@ -1,14 +1,28 @@
 {
   "extends": "astro/tsconfigs/base",
   "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node16",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    // Astro directly run TypeScript code, no transpilation needed.
+    "noEmit": true,
+    // Report an error when importing a file using a casing different from another import of the same file.
+    "forceConsistentCasingInFileNames": true,
+    // Properly support importing CJS modules in ESM
+    "esModuleInterop": true,
+    // Skip typechecking libraries and .d.ts files
+    "skipLibCheck": true,
+    // Allow JavaScript files to be imported
+    "allowJs": true,
     "plugins": [
       {
         "name": "@astrojs/ts-plugin"
       },
     ],
     "jsx": "react-jsx",
-    "jsxImportSource": "react",
-    "moduleResolution": "node16",  // Use a valid value here
+    "jsxImportSource": "node",
     // "verbatimModuleSyntax": true,
 
   }

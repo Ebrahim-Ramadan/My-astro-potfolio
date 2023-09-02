@@ -1,4 +1,5 @@
 ---
+import Modal from "./Modal.astro";
 const getDataFromGithub = async (username) => {
   const AccessToken =
     "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";
@@ -53,12 +54,13 @@ interface Item {
 ---
 
 <!doctype html>
-<div class="flex flex-wrap justify-center">
+<div class="flex flex-wrap justify-center mb-28">
   {
     MyRepos.map((Repo: Item) => (
       <div class="JustOneRepo transition-all duration-300 w-100 border border-gray-300 rounded-md m-2 p-2">
         <div class="flex justify-between items-center mb-5">
           <a
+            target="_blank"
             class="RepoName text-white mr-5 font-semibold text-xl"
             href={Repo.svn_url}
           >
@@ -73,7 +75,11 @@ interface Item {
         </div>
 
         <div class="flex justify-between items-center">
-          <a class="text-white mr-5 font-semibold" href={Repo.svn_url}>
+          <a
+            class="text-white mr-5 font-semibold"
+            target="_blank"
+            href={Repo.svn_url}
+          >
             {Repo.description
               ? Repo.description.length > 40
                 ? Repo.description.substring(0, 30) + "..."
