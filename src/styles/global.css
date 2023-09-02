@@ -72,11 +72,16 @@ font-family: 'Source Code Pro', monospace;
   background: inherit;
   -webkit-filter: blur(10px) saturate(2);
 }
+.BottomBar:hover{
+  opacity: 0.9;
+}
 .BottomBar{
+  padding: 0.25rem 0.5rem;
+  transition: 0.3s;
   color: #000;
   border: 1px solid rgba(0,0,0,0.1);
   border-radius: 6px;
   overflow: hidden;
   background: rgba(235, 235, 235, 0.875);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
