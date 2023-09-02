@@ -1,4 +1,5 @@
 ---
+import TemModal from "./TemModal.astro";
 const getDataFromGithub = async (username) => {
   const AccessToken =
     "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";
@@ -97,4 +98,5 @@ interface Item {
       </div>
     ))
   }
+  <TemModal />
 </div>
