@@ -4,31 +4,10 @@ import HomeMe from "./posts/HomeMe.astro";
 import Repos from "./posts/Repos.astro";
 import IntroduceMe from "./posts/IntroduceMe.astro";
 import "../styles/global.css";
-const getDataFromGithub = async (username) => {
-  const AccessToken =
-    "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";
-  const response = await fetch(
-    `https://api.github.com/users/${username}/repos`,
-    {
-      headers: {
-        Authorization: `token ${AccessToken}`,
-      },
-    }
-  );
-  if (response.status === 200) {
-    const data = await response.json();
-    return data;
-  } else {
-    throw new Error("Failed to fetch data from GitHub");
-  }
-};
-
-const MyRepos = await getDataFromGithub("ebrahim-ramadan");
-console.log(MyRepos[0].owner);
 ---
 
 <Layout title="Ebrahim-Ramadan">
   <HomeMe />
-  <IntroduceMe MyGithub={MyRepos[20].owner} />
-  <Repos MyRepos={MyRepos} />
+  <IntroduceMe />
+  <Repos />
 </Layout>
